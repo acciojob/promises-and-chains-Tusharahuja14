@@ -3,7 +3,7 @@ let age=document.getElementById("age");
 let name=document.getElementById("name");
 
 let form=document.querySelector("form");
-let submit=document.getElementById("submit");
+
 
 form.addEventListener("submit",(event)=>{
 	event.preventDefault();
@@ -22,11 +22,11 @@ let promise1=()=>{
 		setTimeout(()=>{
 			if(parseInt(age.value)>18)
 	{
-		resolve(`Welcome, ${name.value}.You can vote.`);
+		resolve(`Welcome, ${name.value}. You can vote.`);
 	}
 		else
 	{
-		return reject(`Oh sorry, ${name.value}. You aren't old enough.`);
+   reject(`Oh sorry, ${name.value}. You aren't old enough.`);
 	}
 		},4000
 	});
