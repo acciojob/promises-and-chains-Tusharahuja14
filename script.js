@@ -22,11 +22,11 @@ let promise1=()=>{
 		setTimeout(()=>{
 			if(parseInt(age.value)>18)
 	{
-		resolve(`Welcome,${name.value}. You can vote.`);
+		resolve(`Welcome, ${name.value}.You can vote.`);
 	}
 		else
 	{
-		return reject(`Oh sorry ${name.value}. You aren't old enough.`);
+		return reject(`Oh sorry, ${name.value}. You aren't old enough.`);
 	}
 		},4000
 	});
