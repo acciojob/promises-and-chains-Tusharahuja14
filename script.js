@@ -2,33 +2,33 @@
 let age=document.getElementById("age");
 let name=document.getElementById("name");
 
-let form=document.querSelector("form");
+let form=document.querySelector("form");
 let submit=document.getElementById("submit");
 
-
-form.preventDefault();
-let promise1=()=>{
-	if(age>18)
-	{
-	return new Promise((resolve,reject)=>{
-		resolve("Welcome, . You can vote.");
-	});
-	}
-	else
-	{
-		reject("Oh sorry . You aren't old enough.");
-	}
-}
-function print()
-{
-
-	if(age.value===""&&name.value==="")
+form.addEventListener("submit",(event)=>{
+	event.preventDefault();
+if(age.value===""||name.value==="")
 {
 	alert("Please enter valid details");
+	return;
 }
-	else
+	promise1().then((message)=>{alert(message);})
+.catch((error)=>{
+alert(error);
+});
+});
+let promise1=()=>{
+	return new Promise((resolve,reject)=>{
+			if(parseInt(age.value)>18)
 	{
-		console.log(name,age);
+		resolve("Welcome, . You can vote.");
 	}
-}
+		else
+	{
+		return reject("Oh sorry . You aren't old enough.");
+	}
+	});
+	}
+
+	
 
